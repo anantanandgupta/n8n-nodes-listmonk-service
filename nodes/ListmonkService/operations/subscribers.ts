@@ -40,7 +40,7 @@ const operationParameters: INodeProperties[] = [
   },
   {
     displayName: 'Subscriber Status',
-    description: 'Status of the subscriber.',
+    description: 'Status of the subscriber',
     name: 'subscriberStatus',
     type: 'options',
     options: [
@@ -63,7 +63,7 @@ const operationParameters: INodeProperties[] = [
   },
   {
     displayName: 'Add to Subscription Lists',
-    description: 'select if the subscriber should be added to given lists',
+    description: 'Whether the subscriber should be added to given lists',
     name: 'subscriberAddToLists',
     type: 'boolean',
     default: false,
@@ -90,7 +90,7 @@ const operationParameters: INodeProperties[] = [
   },
   {
     displayName: 'Provide Additional Information',
-    description: 'select if the subscriber should store additional information',
+    description: 'Whether the subscriber should store additional information',
     name: 'subscriberAdditionalInformation',
     type: 'boolean',
     default: false,
@@ -116,8 +116,8 @@ const operationParameters: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Pre-confirm Subscription',
-    description: 'If selected,subscriptions are marked as confirmed and no-opt-in emails are sent for double opt-in lists',
+    displayName: 'Pre-Confirm Subscription',
+    description: 'Whether subscriptions are marked as confirmed and no-opt-in emails are sent for double opt-in lists',
     name: 'subscriberPreConfirmSubscription',
     type: 'boolean',
     default: false,
@@ -164,7 +164,7 @@ const operationOptions: INodeProperties[] = [
         },
       }
     ],
-    default: operations.subscriber_create
+    default: 'subscriber_create'
   },
   ...operationParameters,
 ];

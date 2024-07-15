@@ -12,17 +12,17 @@ export const resourceOptions: INodeProperties = {
 	noDataExpression: true,
 	options: [
 		{
-			name: 'List Operations',
+			name: 'List',
 			value: resourceKeys.lists,
 		},
 		{
-			name: 'Subscriber Operations',
+			name: 'Subscriber',
 			value: resourceKeys.subscribers,
 		},
 		{
-			name: 'Transactional Messages',
+			name: 'Transactional Message',
 			value: resourceKeys.transactional,
 		},
 	],
-	default: resourceKeys.subscribers,
+	default: 'subscribers',
 };

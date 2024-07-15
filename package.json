@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-listmonk-apis",
+  "name": "n8n-nodes-listmonk-service",
   "version": "0.0.1",
   "description": "n8n nodes to call listmonk apis.",
   "keywords": [
@@ -39,10 +39,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/ListmonkAPIs.credentials.js"
+      "dist/credentials/ListmonkServiceApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ListmonkAPIs/ListmonkAPIs.node.js"
+      "dist/nodes/ListmonkService/ListmonkService.node.js"
     ]
   },
   "devDependencies": {

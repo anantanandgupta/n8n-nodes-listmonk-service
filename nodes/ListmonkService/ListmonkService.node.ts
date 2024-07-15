@@ -2,27 +2,27 @@ import { INodeType, INodeTypeDescription } from "n8n-workflow";
 import { resourceOptions } from "./resources";
 import { listOperationOptions, subscriberOperationOptions, transactionalOperationOptions } from "./operations";
 
-export class ListmonkAPIs implements INodeType {
+export class ListmonkService implements INodeType {
   description: INodeTypeDescription = {
-    displayName: 'Listmonk APIs',
-		name: 'ListmonkAPIs',
+    displayName: 'Listmonk Service',
+		name: 'listmonkService',
 		icon: {
-      dark: 'file:ListmonkAPIs.icon.svg',
-      light: 'file:ListmonkAPIs.icon.svg',
+      dark: 'file:ListmonkService.icon.svg',
+      light: 'file:ListmonkService.icon.svg',
     },
     group: ['transform'],
     version: [1],
     defaultVersion: 1,
     subtitle: '={{ $parameter["resource"] + " (" + $parameter["operation"] + ")" }}',
-		description: 'Call listmonk api endpoints.',
+		description: 'Call listmonk service endpoints.',
     defaults: {
-      name: 'Listmonk APIs',
+      name: 'Listmonk Service',
     },
     inputs: ['main'],
     outputs: ['main'],
     credentials: [
       {
-        name: 'ListmonkAPIs',
+        name: 'listmonkServiceApi',
         required: true,
       },
     ],

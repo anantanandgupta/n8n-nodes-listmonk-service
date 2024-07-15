@@ -202,7 +202,7 @@ const operationOptions: INodeProperties[] = [
         },
       },
     ],
-    default: operations.list_create
+    default: 'list_create'
   },
   ...operationParameters,
 ];

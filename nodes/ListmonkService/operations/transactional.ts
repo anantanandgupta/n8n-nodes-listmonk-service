@@ -24,7 +24,6 @@ const operationParameters: INodeProperties[] = [
     displayName: 'Sender Email',
     description: 'Sender email configured in listmonk',
     name: 'messageSenderEmail',
-    required: false,
     type: 'string',
     default: '',
     displayOptions: {
@@ -36,7 +35,7 @@ const operationParameters: INodeProperties[] = [
   },
   {
     displayName: 'Use Messenger',
-    description: 'name of the messenger to use to send the email',
+    description: 'Name of the messenger to use to send the email',
     name: 'messageMessenger',
     required: true,
     type: 'string',
@@ -116,7 +115,6 @@ const operationParameters: INodeProperties[] = [
     displayName: 'Subscriber ID',
     description: 'ID of the subscriber to send mail to',
     name: 'messageSubscriberID',
-    required: false,
     type: 'number',
     default: '',
     displayOptions: {
@@ -133,7 +131,6 @@ const operationParameters: INodeProperties[] = [
     displayName: 'Subscriber Email',
     description: 'Email of the subscriber to send mail to',
     name: 'messageSubscriberEmail',
-    required: false,
     type: 'string',
     default: '',
     displayOptions: {
@@ -183,7 +180,7 @@ const operationOptions: INodeProperties[] = [
         },
       },
     ],
-    default: operations.transactional_send
+    default: 'transactional_send'
   },
   ...operationParameters,
 ];

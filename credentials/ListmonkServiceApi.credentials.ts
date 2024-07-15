@@ -1,25 +1,21 @@
-import { IAuthenticate, Icon, ICredentialTestRequest, ICredentialType, INodeProperties } from 'n8n-workflow';
+import { IAuthenticate, ICredentialTestRequest, ICredentialType, INodeProperties } from 'n8n-workflow';
 
-export class ListmonkAPIs implements ICredentialType {
-  name: string = 'ListmonkAPIs';
-  displayName: string = 'Listmonk APIs';
+export class ListmonkServiceApi implements ICredentialType {
+  name = 'listmonkServiceApi';
+  displayName = 'Listmonk Service API';
   documentationUrl: string = 'https://listmonk.app/docs/apis/apis/';
-  icon: Icon = {
-    dark: 'file:ListmonkAPIs.icon.svg',
-    light: 'file:ListmonkAPIs.icon.svg',
-  };
   authenticate: IAuthenticate = {
     type: 'generic',
     properties: {
       auth: {
-        username: '={{$credentials.username}}',
-        password: '={{$credentials.password}}'
+        username: '={{ $credentials["username"] }}',
+        password: '={{ $credentials["password"] }}'
       }
     }
   };
   test?: ICredentialTestRequest = {
     request: {
-      baseURL: '={{$credentials.host}}',
+      baseURL: '={{ $credentials["host"] }}',
       url: '/admin',
       method: 'GET',
     },
