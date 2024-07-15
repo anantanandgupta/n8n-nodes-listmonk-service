@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-base.ListmonkAPIs",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Communication", "Sales", "Marketing & Content"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://listmonk.app/docs/apis/apis/"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://listmonk.app/docs/apis/apis/"
+			}
+		]
+	}
+}

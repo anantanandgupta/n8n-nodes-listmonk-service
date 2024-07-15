@@ -1,19 +1,22 @@
 {
-  "name": "n8n-nodes-<...>",
-  "version": "0.1.0",
-  "description": "",
+  "name": "n8n-nodes-listmonk-apis",
+  "version": "0.0.1",
+  "description": "n8n nodes to call listmonk apis.",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "listmonk",
+    "n8n",
+    "transactional emails"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/anantanandgupta/n8n-nodes-listmonk-apis",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Anant Anand Gupta",
+    "email": "contact@opensource.anantanandgupta.net"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/solscientia/n8n-nodes-listmonk-apis.git"
   },
   "engines": {
     "node": ">=18.10",
@@ -36,12 +39,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
+      "dist/credentials/ListmonkAPIs.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/ListmonkAPIs/ListmonkAPIs.node.js"
     ]
   },
   "devDependencies": {
