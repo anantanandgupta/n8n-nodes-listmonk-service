@@ -51,8 +51,4 @@ This node is tested to run on a minimum version of n8n `v1.46.0`.
 * [n8n Community Nodes Documentation](https://docs.n8n.io/integrations/community-nodes/)
 * [Listmonk API Documentation](https://listmonk.app/docs/apis/apis/)
 
-## Version history
-
-_This is another optional section. If your node has multiple versions, include a short description of available versions and what changed, as well as any compatibility impact._
-
 
