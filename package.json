@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-listmonk-service",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "n8n nodes to call listmonk apis.",
   "keywords": [
     "n8n-community-node-package",
@@ -9,29 +9,26 @@
     "transactional emails"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/anantanandgupta/n8n-nodes-listmonk-apis",
+  "homepage": "https://github.com/anantanandgupta/n8n-nodes-listmonk-service",
   "author": {
     "name": "Anant Anand Gupta",
     "email": "contact@opensource.anantanandgupta.net"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/anantanandgupta/n8n-nodes-listmonk-apis.git"
+    "url": "https://github.com/anantanandgupta/n8n-nodes-listmonk-service.git"
   },
   "engines": {
-    "node": ">=18.10",
-    "pnpm": ">=9.1"
+    "node": ">=18.10"
   },
-  "packageManager": "pnpm@9.1.4",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier nodes credentials --write",
     "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
-    "prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes credentials package.json"
+    "lint:fix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
   },
   "files": [
     "dist"
