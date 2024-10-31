@@ -1,20 +1,22 @@
-import { INodeType, INodeTypeDescription } from "n8n-workflow";
+import { IconFile, INodeType, INodeTypeDescription } from "n8n-workflow";
 import { resourceOptions } from "./resources";
 import { listOperationOptions, subscriberOperationOptions, transactionalOperationOptions } from "./operations";
+
+const icon: IconFile = 'file:ListmonkService.icon.svg'
 
 export class ListmonkService implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Listmonk Service',
-		name: 'listmonkService',
-		icon: {
-      dark: 'file:ListmonkService.icon.svg',
-      light: 'file:ListmonkService.icon.svg',
+    name: 'listmonkService',
+    icon: {
+      dark: icon,
+      light: icon,
     },
     group: ['transform'],
     version: [1],
     defaultVersion: 1,
     subtitle: '={{ $parameter["resource"] + " (" + $parameter["operation"] + ")" }}',
-		description: 'Call listmonk service endpoints.',
+    description: 'Call listmonk service endpoints.',
     defaults: {
       name: 'Listmonk Service',
     },
@@ -33,11 +35,11 @@ export class ListmonkService implements INodeType {
         'Content-Type': 'application/json',
       }
     },
-		properties: [
-		  resourceOptions,
+    properties: [
+      resourceOptions,
       ...subscriberOperationOptions,
       ...listOperationOptions,
       ...transactionalOperationOptions,
-		]
-	};
+    ]
+  };
 }

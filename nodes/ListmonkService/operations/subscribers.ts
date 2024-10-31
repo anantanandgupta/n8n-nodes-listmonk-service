@@ -351,39 +351,39 @@ const operationOptions: INodeProperties[] = [
             method: 'GET',
             url: '={{ $parameter["subscriberIdentifier"] === "subscriber_id" ? "/subscribers/" + $parameter["subscriberID"] : "/subscribers" }}',
             qs: {
-							query: '={{ $parameter["subscriberIdentifier"] === "subscriber_email" ? "email=\'" + $parameter["subscriberEmail"] + "\'" : undefined }}',
-						},
+              query: '={{ $parameter["subscriberIdentifier"] === "subscriber_email" ? "email=\'" + $parameter["subscriberEmail"] + "\'" : undefined }}',
+            },
           },
         },
       },
       {
-				name: 'Manage Subscriber List',
-				value: operations.subscriber_manage_list,
-				action: 'Manage subscriber list',
-				routing: {
-					request: {
-						method: 'PUT',
-						url: '/subscribers/lists',
-						body: {
+        name: 'Manage Subscriber List',
+        value: operations.subscriber_manage_list,
+        action: 'Manage subscriber list',
+        routing: {
+          request: {
+            method: 'PUT',
+            url: '/subscribers/lists',
+            body: {
               ids: '={{ JSON.parse($parameter["subscriberIDs"]) }}',
               action: '={{ $parameter["subscriberAction"] }}',
               target_list_ids: '={{ JSON.parse($parameter["listIDs"]) }}',
               status: '={{ $parameter["subscriptionStatus"] }}',
             },
-						encoding: 'json',
-						json: true,
-					},
-				},
-			},
+            encoding: 'json',
+            json: true,
+          },
+        },
+      },
       {
-				name: 'Update Subscriber',
-				value: operations.subscriber_update,
-				action: 'Update subscriber by id',
-				routing: {
-					request: {
-						method: 'PUT',
-						url: '={{ "/subscribers/" + $parameter["subscriberID"]}}',
-						body: {
+        name: 'Update Subscriber',
+        value: operations.subscriber_update,
+        action: 'Update subscriber by id',
+        routing: {
+          request: {
+            method: 'PUT',
+            url: '={{ "/subscribers/" + $parameter["subscriberID"]}}',
+            body: {
               email: '={{ $parameter["subscriberEmail"] }}',
               name: '={{ $parameter["subscriberName"] }}',
               status: '={{ $parameter["subscriberStatus"] }}',
@@ -392,11 +392,11 @@ const operationOptions: INodeProperties[] = [
               preconfirm_subscriptions: '={{ $parameter["subscriberPreConfirmSubscription"] }}',
 
             },
-						encoding: 'json',
-						json: true,
-					},
-				},
-			},
+            encoding: 'json',
+            json: true,
+          },
+        },
+      },
     ],
     default: 'subscriber_create'
   },

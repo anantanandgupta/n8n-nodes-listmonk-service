@@ -24,19 +24,19 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 There is only one node in this package capable of interacting with below resources and respective operations:
 
 - Lists  
-	- Create a list
-	- Get a list _(by listID)_
-	- Get all lists
-	- Update a list _(by listID)_
-	- Delete a list _(by listID)_
+  - Create a list
+  - Get a list _(by listID)_
+  - Get all lists
+  - Update a list _(by listID)_
+  - Delete a list _(by listID)_
 - Subscribers
-	- Create a subscriber
-	- Get a subscriber
-	- Manage subscriber list
-	- Update a subscriber
-	- _more under implementation_
+  - Create a subscriber
+  - Get a subscriber
+  - Manage subscriber list
+  - Update a subscriber
+  - _more under implementation_
 - Transactional
-	- Send a transactional email
+  - Send a transactional email
 
 ## Credentials
 

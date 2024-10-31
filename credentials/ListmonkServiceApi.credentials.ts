@@ -1,7 +1,13 @@
-import { IAuthenticate, ICredentialTestRequest, ICredentialType, INodeProperties } from 'n8n-workflow';
+import { IAuthenticate, IconFile, ICredentialTestRequest, ICredentialType, INodeProperties } from 'n8n-workflow';
+
+const icon: IconFile = 'file:ListmonkService.icon.svg'
 
 export class ListmonkServiceApi implements ICredentialType {
   name = 'listmonkServiceApi';
+  icon = {
+    dark: icon,
+    light: icon,
+  };
   displayName = 'Listmonk Service API';
   documentationUrl: string = 'https://listmonk.app/docs/apis/apis/';
   authenticate: IAuthenticate = {

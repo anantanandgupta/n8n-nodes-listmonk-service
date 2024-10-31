@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-listmonk-service",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "n8n nodes to call listmonk apis.",
   "keywords": [
     "n8n-community-node-package",
@@ -49,9 +49,11 @@
     "gulp": "^4.0.2",
     "n8n-workflow": "*",
     "prettier": "^3.3.2",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   },
   "peerDependencies": {
     "n8n-workflow": "*"
+  },
+  "dependencies": {
   }
 }
