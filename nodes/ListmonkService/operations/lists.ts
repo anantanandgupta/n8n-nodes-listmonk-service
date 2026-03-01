@@ -18,11 +18,7 @@ const operationParameters: INodeProperties[] = [
 		default: '',
 		displayOptions: {
 			show: {
-				operation: [
-					operations.list_delete.key,
-					operations.list_get.key,
-					operations.list_update.key,
-				],
+				operation: [operations.list_delete.key, operations.list_get.key, operations.list_update.key],
 				resource: [resourceKeys.lists.key],
 			},
 		},
@@ -133,10 +129,7 @@ const operationOptions: INodeProperties[] = [
 				routing: {
 					send: {
 						preSend: [
-							async function (
-								this: IExecuteSingleFunctions,
-								requestOptions: IHttpRequestOptions,
-							): Promise<IHttpRequestOptions> {
+							async function (this: IExecuteSingleFunctions, requestOptions: IHttpRequestOptions): Promise<IHttpRequestOptions> {
 								const tags = this.getNodeParameter('listTags') as Array<{ listTag: string }>;
 								const tagList = tags.map((tag) => tag.listTag);
 								requestOptions.body.tags = tagList;
@@ -186,10 +179,7 @@ const operationOptions: INodeProperties[] = [
 				routing: {
 					send: {
 						preSend: [
-							async function (
-								this: IExecuteSingleFunctions,
-								requestOptions: IHttpRequestOptions,
-							): Promise<IHttpRequestOptions> {
+							async function (this: IExecuteSingleFunctions, requestOptions: IHttpRequestOptions): Promise<IHttpRequestOptions> {
 								const tags = this.getNodeParameter('listTags') as Array<{ listTag: string }>;
 								const tagList = tags.map((tag) => tag.listTag);
 								requestOptions.body.tags = tagList;

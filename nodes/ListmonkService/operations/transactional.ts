@@ -230,20 +230,15 @@ const operationOptions: INodeProperties[] = [
 						url: '/tx',
 						body: {
 							template_id: '={{ $parameter["messageTemplateID"] }}',
-							subscriber_id:
-								'={{ $parameter["messageIsSubscriberExisting"] === "subscriber_existing" && $parameter["messageSubscriberIdentifier"] === "subscriber_id" ? $parameter["messageSubscriberID"] : undefined }}',
-							subscriber_email:
-								'={{ $parameter["messageIsSubscriberExisting"] === "subscriber_existing" && $parameter["messageSubscriberIdentifier"] === "subscriber_email" ? $parameter["messageSubscriberEmail"] : undefined }}',
-							subscriber_emails:
-								'={{ $parameter["messageIsSubscriberExisting"] === "subscriber_not_existing" ? [$parameter["messageSubscriberEmails"]] : undefined }}',
-							subscriber_mode:
-								'={{ $parameter["messageIsSubscriberExisting"] === "subscriber_not_existing" ? "external" : undefined }}',
+							subscriber_id: '={{ $parameter["messageIsSubscriberExisting"] === "subscriber_existing" && $parameter["messageSubscriberIdentifier"] === "subscriber_id" ? $parameter["messageSubscriberID"] : undefined }}',
+							subscriber_email: '={{ $parameter["messageIsSubscriberExisting"] === "subscriber_existing" && $parameter["messageSubscriberIdentifier"] === "subscriber_email" ? $parameter["messageSubscriberEmail"] : undefined }}',
+							subscriber_emails: '={{ $parameter["messageIsSubscriberExisting"] === "subscriber_not_existing" ? [$parameter["messageSubscriberEmails"]] : undefined }}',
+							subscriber_mode: '={{ $parameter["messageIsSubscriberExisting"] === "subscriber_not_existing" ? "external" : undefined }}',
 							from_email: '={{ $parameter["messageSenderEmail"] }}',
 							messenger: '={{ $parameter["messageMessenger"] }}',
 							content_type: '={{ $parameter["messageContentType"] }}',
 							data: '={{ JSON.parse($parameter["messageData"]) }}',
-							headers:
-								'={{ $parameter["messageReplyToEmailAddress"]?.trim() ? [{ "Reply-To": $parameter["messageReplyToEmailAddress"]?.trim() }] : [] }}',
+							headers: '={{ $parameter["messageReplyToEmailAddress"]?.trim() ? [{ "Reply-To": $parameter["messageReplyToEmailAddress"]?.trim() }] : [] }}',
 						},
 						encoding: 'json',
 						json: true,

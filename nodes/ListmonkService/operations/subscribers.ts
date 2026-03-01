@@ -160,8 +160,7 @@ const operationParameters: INodeProperties[] = [
 	},
 	{
 		displayName: 'Pre-Confirm Subscription',
-		description:
-			'Whether subscriptions are marked as confirmed and no-opt-in emails are sent for double opt-in lists',
+		description: 'Whether subscriptions are marked as confirmed and no-opt-in emails are sent for double opt-in lists',
 		name: 'subscriberPreConfirmSubscription',
 		type: 'boolean',
 		default: false,
@@ -334,10 +333,8 @@ const operationOptions: INodeProperties[] = [
 							email: '={{ $parameter["subscriberEmail"] }}',
 							name: '={{ $parameter["subscriberName"] }}',
 							status: '={{ $parameter["subscriberStatus"] }}',
-							lists:
-								'={{ $parameter["subscriberAddToLists"] === true ? JSON.parse($parameter["subscriberLists"]) : undefined }}',
-							attribs:
-								'={{ $parameter["subscriberAdditionalInformation"] === true ? JSON.parse($parameter["subscriberAttributes"]) : undefined }}',
+							lists: '={{ $parameter["subscriberAddToLists"] === true ? JSON.parse($parameter["subscriberLists"]) : undefined }}',
+							attribs: '={{ $parameter["subscriberAdditionalInformation"] === true ? JSON.parse($parameter["subscriberAttributes"]) : undefined }}',
 							preconfirm_subscriptions: '={{ $parameter["subscriberPreConfirmSubscription"] }}',
 						},
 						encoding: 'json',
@@ -354,8 +351,7 @@ const operationOptions: INodeProperties[] = [
 						method: 'GET',
 						url: '={{ $parameter["subscriberIdentifier"] === "subscriber_id" ? "/subscribers/" + $parameter["subscriberID"] : "/subscribers" }}',
 						qs: {
-							query:
-								'={{ $parameter["subscriberIdentifier"] === "subscriber_email" ? "email=\'" + $parameter["subscriberEmail"] + "\'" : undefined }}',
+							query: '={{ $parameter["subscriberIdentifier"] === "subscriber_email" ? "email=\'" + $parameter["subscriberEmail"] + "\'" : undefined }}',
 						},
 					},
 				},
