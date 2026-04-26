@@ -1,0 +1,3 @@
+### get all subscribers
+GET {{$dotenv LISTMONK_HOST}}/api/subscribers?per_page=all
+Authorization: Basic {{$dotenv LISTMONK_USERNAME}} {{$dotenv LISTMONK_PASSWORD}}
