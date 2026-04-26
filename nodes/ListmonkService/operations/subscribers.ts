@@ -229,15 +229,29 @@ const operationParameters: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Limit Results Per Page',
-		description: 'Whether to specify how many results to return per page',
-		name: 'usePerPage',
+		displayName: 'Use Pagination',
+		description: 'Whether to paginate subscriber results',
+		name: 'usePagination',
 		type: 'boolean',
 		default: false,
 		displayOptions: {
 			show: {
 				operation: [operations.subscriber_get_all.key],
 				resource: [resourceKeys.subscribers.key],
+			},
+		},
+	},
+	{
+		displayName: 'Page',
+		description: 'Page number to fetch',
+		name: 'page',
+		type: 'number',
+		default: 1,
+		displayOptions: {
+			show: {
+				operation: [operations.subscriber_get_all.key],
+				resource: [resourceKeys.subscribers.key],
+				usePagination: [true],
 			},
 		},
 	},
@@ -251,7 +265,7 @@ const operationParameters: INodeProperties[] = [
 			show: {
 				operation: [operations.subscriber_get_all.key],
 				resource: [resourceKeys.subscribers.key],
-				usePerPage: [true],
+				usePagination: [true],
 			},
 		},
 	},
@@ -396,8 +410,9 @@ const operationOptions: INodeProperties[] = [
 						method: 'GET',
 						url: '={{ "/subscribers" }}',
 						qs: {
+							page: '={{ $parameter["usePagination"] === true ? $parameter["page"] : undefined }}',
 							per_page:
-								'={{ $parameter["usePerPage"] === true ? $parameter["perPage"] : undefined }}',
+								'={{ $parameter["usePagination"] === true ? $parameter["perPage"] : "all" }}',
 						},
 					},
 				},
