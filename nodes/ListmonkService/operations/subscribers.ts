@@ -256,8 +256,33 @@ const operationParameters: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Per Page Mode',
+		description: 'Choose whether to limit by number or fetch all results',
+		name: 'perPageMode',
+		type: 'options',
+		default: 'number',
+		options: [
+			{
+				name: 'Number',
+				value: 'number',
+			},
+			{
+				name: 'All',
+				value: 'all',
+			},
+		],
+		displayOptions: {
+			show: {
+				operation: [operations.subscriber_get_all.key],
+				resource: [resourceKeys.subscribers.key],
+				usePagination: [true],
+			},
+		},
+	},
+	{
 		displayName: 'Per Page',
 		description: 'Number of results to return per page',
+		hint: 'Only used when Per Page Mode is set to Number',
 		name: 'perPage',
 		type: 'number',
 		default: 20,
@@ -266,6 +291,7 @@ const operationParameters: INodeProperties[] = [
 				operation: [operations.subscriber_get_all.key],
 				resource: [resourceKeys.subscribers.key],
 				usePagination: [true],
+				perPageMode: ['number'],
 			},
 		},
 	},
@@ -412,7 +438,7 @@ const operationOptions: INodeProperties[] = [
 						qs: {
 							page: '={{ $parameter["usePagination"] === true ? $parameter["page"] : undefined }}',
 							per_page:
-								'={{ $parameter["usePagination"] === true ? $parameter["perPage"] : "all" }}',
+								'={{ $parameter["usePagination"] === true ? ($parameter["perPageMode"] === "all" ? "all" : $parameter["perPage"]) : "all" }}',
 						},
 					},
 				},
