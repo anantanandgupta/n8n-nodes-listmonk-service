@@ -1,5 +1,5 @@
 import { IconFile, INodeType, INodeTypeDescription } from 'n8n-workflow';
-import { resourceOptions } from './resources';
+import { resources } from './resources';
 import { listOperationOptions, subscriberOperationOptions, transactionalOperationOptions } from './operations';
 
 const icon: IconFile = 'file:ListmonkService.icon.svg';
@@ -36,7 +36,7 @@ export class ListmonkService implements INodeType {
       },
     },
     properties: [
-      resourceOptions,
+      resources,
       ...subscriberOperationOptions,
       ...listOperationOptions,
       ...transactionalOperationOptions,
